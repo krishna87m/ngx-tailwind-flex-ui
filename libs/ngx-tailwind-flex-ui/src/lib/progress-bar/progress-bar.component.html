@@ -1,0 +1,21 @@
+<!-- BUFFER BAR (only shown in buffer variant) -->
+<div
+  *ngIf="variant === 'buffer'"
+  class="absolute top-0 left-0 h-full transition-all duration-300"
+  [ngStyle]="{ width: buffer + '%' }"
+  [class.bg-gray-300]="variant === 'buffer'"
+></div>
+
+<!-- MAIN PROGRESS BAR -->
+<div
+  class="absolute top-0 left-0 h-full transition-all duration-300"
+  [ngClass]="progressClasses"
+  [ngStyle]="{ width: progress + '%' }"
+></div>
+
+<!-- INDETERMINATE SPINNER (for indeterminate/query variants) -->
+<div
+  *ngIf="variant === 'indeterminate' || variant === 'query'"
+  class="absolute top-0 left-0 h-full w-full animate-indeterminate"
+  [ngClass]="progressClasses"
+></div>
